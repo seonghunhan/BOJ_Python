@@ -1,13 +1,29 @@
-# import sys
-# #int(sys.stdin.readline())
-# #temp = [int(sys.stdin.readline() for i in range(9))]
+import sys
+#int(sys.stdin.readline())
+temp = []
 
-# temp = []
+for i in range(9) :
+    temp.append(int(sys.stdin.readline()))
 
-# for i in range(9) :
-#     temp.append(int(sys.stdin.readline()))
+sum = sum(temp)
+var = False
 
-# sum = sum(temp)
 
-# for i in range(len(temp)) :
-    
+for i in range(8) :
+    for j in range(i+1,9):
+        if sum - (temp[i] + temp[j]) == 100 :
+            a = [i,j]
+            var = True
+            break
+    if var :
+        break
+
+del temp[a[0]]
+del temp[a[1]-1]
+
+temp.sort()
+
+for i in temp :
+    print(i)
+
+

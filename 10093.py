@@ -11,3 +11,7 @@ if a[1] - a[0] <= 1 :
 print(b)
 for i in range(b) :
     print(a[0]+i+1, end=" ")
+
+# import sys
+
+# a = int(sys.stdin.readline())

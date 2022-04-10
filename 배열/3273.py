@@ -1,14 +1,20 @@
-# import sys
+import sys
 
-# a = int(sys.stdin.readline())
-# b = list(map(int, sys.stdin.readline().split()))
-# c = int(sys.stdin.readline())
-# d = []
+a = int(sys.stdin.readline())
+b = list(map(int, sys.stdin.readline().split()))
+c = int(sys.stdin.readline())
+d = 0
+b.sort()
+left = 0
+right = a-1
 
-# for i in range(a) :
-#     for j in range(a-1) :
-#         if i + j == c :
-#             d.append(i)
-#             d.append(j)
+while left < right :
+    if b[left] + b[right] == c :
+        d += 1
+        right -= 1
+        continue
+    elif b[left] + b[right] != c :
+        left += 1
 
-# print(int(len(d)/2))
+print(d)
+

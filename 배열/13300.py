@@ -1,11 +1,18 @@
-# import sys
+import sys
+import math
 
-# a = list(map(int, sys.stdin.readline().split()))
+N, A = map(int, sys.stdin.readline().split())
 
+student = [[0]*2 for _ in range (6)]
 
-# for i in range(len(a)) :
-#     b = list(map(int, sys.stdin.readline().split()))
+for i in range(N) :
+    B, G = map(int, sys.stdin.readline().split())
+    student[G-1][B] += 1
 
-student = [[0] * 7 for _ in range(3)]
+temp = 0
 
-print(student)
+for i in range(6) :
+    for j in range(2) :
+        temp += math.ceil(student[i][j]/A)
+
+print(temp)

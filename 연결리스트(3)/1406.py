@@ -9,11 +9,14 @@ for i in range(b) :
     c = list(sys.stdin.readline().rstrip().split())
 
     if c[0] == 'L' :
-        d.append(a.pop())
+        if a :    
+            d.append(a.pop())
     elif c[0] == 'D' :
-        a.append(d.pop())
+        if d :
+            a.append(d.pop())
     elif c[0] == 'B' :
-        a.pop()
+        if a :
+            a.pop()
     else : 
         a.append(c[1])
         

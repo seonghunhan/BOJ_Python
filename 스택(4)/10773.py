@@ -13,9 +13,6 @@ for i in range(N) :
     elif a == 0 :
         list1.pop()
 
-#sum(list1[:])
-# list2 = []
-# for i in list1 :
-#     list2[0] += i
+
 
 print(sum(list1[:]))

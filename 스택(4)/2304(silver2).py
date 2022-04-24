@@ -2,7 +2,7 @@ import sys
 
 N = int(sys.stdin.readline())
 
-building_list = [0] * 20
+building_list = [0] * 1001
 
 h_max = 0
 h_max_idx = 0

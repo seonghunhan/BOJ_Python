@@ -6,8 +6,8 @@ graph = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 que = deque()
 dx = [1,-1,0,0]
 dy = [0,0,1,-1]
-#start_point_list = []
 result = False
+# start_point_list = []
 
 # for i in range(n) :
 #     if 1 in graph[i] :

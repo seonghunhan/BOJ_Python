@@ -4,13 +4,13 @@ from collections import deque
 n = int(sys.stdin.readline())
 
 graph = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
+temp_graph = list(graph)
 
 dx = [1,-1,0,0]
 dy = [0,0,1,-1]
 
 count = 0
 max_count = 1
-
 
 def bfs(x,y,k) :
     que = deque()

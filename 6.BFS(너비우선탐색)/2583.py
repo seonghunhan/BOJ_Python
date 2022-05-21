@@ -1,8 +1,6 @@
 import sys
 from collections import deque
-
 n, m, k = map(int, sys.stdin.readline().split())
-
 graph = [[0]*m for _ in range(n)]
 result = []
 global res
@@ -33,11 +31,10 @@ def bfs(x,y) :
 
 for i in range(k) :
     x1, y1, x2, y2 = map(int,sys.stdin.readline().split())
-
-    for j in range(y1,y2) :  # 2차원 배열 [n][m]에 맞게 문제에서의 y를 n으로 x를 m으로
+# 2차원 배열 [n][m]에 맞게 문제에서의 y를 n으로 x를 m으로
+    for j in range(y1,y2) :
         for k in range(x1,x2) :
             graph[j][k] = 1
-
 
 for i in range(n) :
     for j in range(m) :
@@ -46,7 +43,6 @@ for i in range(n) :
             res += 1
             bfs(i,j)
             res = 0
-
 print(len(result))
 print(*sorted(result))
 

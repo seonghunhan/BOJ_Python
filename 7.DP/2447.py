@@ -1,20 +1,28 @@
-def draw_stars(n):
-    if n==1:
+import sys
+
+def reculsion (N) :
+    
+    if N == 1 :
         return ['*']
 
-    Stars = draw_stars(n//3)
-    L=[]
-    
+    stars = reculsion(N//3)
 
-    for star in Stars:
-        L.append(star*3)
-    for star in Stars:
-        L.append(star+' '*(n//3)+star)
-    for star in Stars:
-        L.append(star*3)
-    print(L)
-    return L
+    arr = []
 
-N = int(input())
+    for star in stars :
+        arr.append(star * 3)
+    for star in stars :
+        arr.append(star + ' ' * (N//3) + star)
+    for star in stars :
+        arr.append(star * 3)
 
-print('\n'.join(draw_stars(N)))
+    return arr
+
+
+
+N = int(sys.stdin.readline())
+
+print('\n'.join(reculsion(N)))
+
+
+

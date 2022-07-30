@@ -66,3 +66,4 @@ arr, cnt = [], 0
 dfs(0,0,0,0)
 print(cnt)
 
+

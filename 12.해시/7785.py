@@ -19,7 +19,7 @@ for i in range (N) :
 remove_values = ['leave']
 
 for key in list(dict.keys()) :
-    if dict[key] in remove_values :
+    if dict[key] in remove_values :1
         dict.pop(key)
 
 sort_desc_dict = sorted(dict.keys(), reverse = True)

@@ -12,6 +12,7 @@ b = [[list(map(int, input().split())) for _ in range (5)] for _ in range (5)]
 board = [[[0 for _ in range(5)] for _ in range(5)] for _ in range (5) ]
 
 
+
 def rotate (board1) :
     rotatingBoard = [[0 for _ in range(5)] for _ in range(5)]
     

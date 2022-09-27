@@ -1,7 +1,6 @@
 import sys
 input = sys.stdin.readline
 
-# 스티커를 붙일 수 있다면 True, 아니라면 False를 반환한다.
 def checking(temp, sticker):
     for sy in range(len(sticker)):
         for sx in range(len(sticker[0])):
@@ -31,7 +30,7 @@ Y, X, k = map(int, input().split())
 notebook = [[0] * X for _ in range(Y)]
 
 for _ in range(k):
-    y, x = map(int, input().split()) # 3, 3
+    y, x = map(int, input().split())
     sticker = [list(map(int, input().split())) for _ in range(y)]
     chk = False
     cnt = 0
@@ -42,12 +41,14 @@ for _ in range(k):
             if chk == True:
                 break
             # 새로 들어갈 스티커의 가로를 기존판의 가로와 맞춰서 왼쪽부터 한칸씩 오른쪽으로 앞당기기
-            for j in range(X - len(sticker[0]) + 1): 
+            for j in range(X - len(sticker[0]) + 1):
                 # 여기서 i,j는 변수에 저장되고 checking, attach함수에서도 동일하게 사용된다.
                 if checking(notebook, sticker):
                     attach(notebook, sticker)
                     chk = True
                     break
+
+            
         sticker = rotate_90(sticker)
         cnt += 1
 

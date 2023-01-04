@@ -31,4 +31,9 @@ for chi in combinations(chickStore, M) :
     # 다 더해준 치킨거리(도시 치킨거리)의 최솟값을 찾는다    
     result = min(result, chi_len)    
         
+# for chi in combinations(chickStore, M) :
+#     for i in range(M) :
+        
+#         print(chi[i])
+    
 print(result)

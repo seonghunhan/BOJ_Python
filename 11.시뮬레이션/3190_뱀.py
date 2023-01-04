@@ -18,7 +18,9 @@ changeDirection = deque([])
 for i in range(L) :
     a, b = map(str, input().split())
     changeDirection.append([int(a), b])
- 
+
+
+# 동 남 서 북 
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
 
@@ -50,6 +52,7 @@ def bfs(x,y,d) :
         #print(changeDirection)
         
         # 마지막에 changeDirection이 없기 때문에 조건 넣어줘야 함
+        # 3
         if len(changeDirection) > 0 :
             if result == changeDirection[0][0] :
                 #print("Asd")

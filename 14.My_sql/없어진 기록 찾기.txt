@@ -1,0 +1,9 @@
+SELECT A.ANIMAL_ID, A.NAME
+FROM ANIMAL_OUTS A
+WHERE A.ANIMAL_ID NOT IN (
+                            SELECT C.ANIMAL_ID
+                            FROM ANIMAL_INS C
+                         )
+ORDER BY ANIMAL_ID
+
+* 여기서 NOT IN썼지만, 보통은 안쓰고 서브쿼리 IN으로 이용하는것은 많이 쓸듯?

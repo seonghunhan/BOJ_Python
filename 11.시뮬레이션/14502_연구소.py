@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 from itertools import combinations
-from itertools import p
+#from itertools import p
 import copy
 input = sys.stdin.readline
 
@@ -39,6 +39,7 @@ def bfs() :
 
 # 0인곳을 위주로 3개의 조합 형성
 addWallList = list(combinations(safezone, 3))
+print(addWallList)
 temp = 0
 
 for i in addWallList :

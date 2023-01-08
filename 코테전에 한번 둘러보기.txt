@@ -27,6 +27,10 @@ b = set(['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w'
 temp.append(arr[i])
 if len(temp) == N and len((set(temp) & a)) >= 1 and len((set(temp) & b)) >= 2 :
 
+1.2 int문제관련
+123 -> [1, 2, 3]
+board = [list(map(int, input().rstrip())) for _ in range(N)
+
 2. copy (딥카피)(주소까지 다르게 복사)
 import copy
 temp = copy.deepcopy(board)
@@ -54,3 +58,7 @@ temp = list(permutations(arr,3))
 weightList.sort(reverse=True) -> 역순
 time = sorted(time, key=lambda a: a[0]) -> 그리디 1931 최대회의실배정
 time = sorted(time, key=lambda a: a[1])
+
+6. bfs 2206 벽부수기 한번 보기
+
+7. 코테 제출언어에 pypy3있으면 이걸로 제출하기!!!!!!!!!!

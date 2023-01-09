@@ -62,3 +62,7 @@ time = sorted(time, key=lambda a: a[1])
 6. bfs 2206 벽부수기 한번 보기
 
 7. 코테 제출언어에 pypy3있으면 이걸로 제출하기!!!!!!!!!!
+
+8. import math
+올림 math.ceil(값) -> ceil천장이니까 올림이래
+내림 math.floor(값) -> floor 마루,바닥이니까 내림이래

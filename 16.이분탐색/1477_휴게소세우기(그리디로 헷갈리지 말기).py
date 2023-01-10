@@ -2,7 +2,7 @@
 N, M, L = map(int, input().split())
 arr = [0]+list(map(int, input().split()))+[L]
 arr.sort()
-print(arr)
+#print(arr)
 
 start, end = 1, L-1
 result = 0
@@ -13,9 +13,9 @@ while start <= end:
         # 현재 거리 중 mid보다 큰 거리를 찾아서
         if arr[i]-arr[i-1] > mid:
             # 나눈 만큼 휴게소를 설치 (현재 설치 돼있는 구역은 제외해야해서 -1)
-            print("mid : " + str(mid))
+            #print("mid : " + str(mid))
             count += (arr[i]-arr[i-1]-1)//mid
-            print("count : " + str(count))
+            #print("count : " + str(count))
     if count > M:
         start = mid+1
     else:

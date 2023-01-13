@@ -55,6 +55,7 @@ temp = list(permutations(arr,3))
 
 
 5. sort
+https://gorokke.tistory.com/38 여기참고하기(숫자,문자,오름차순,내림차순 정리되어있슴)
 weightList.sort(reverse=True) -> 역순
 time = sorted(time, key=lambda a: a[0]) -> 그리디 1931 최대회의실배정
 time = sorted(time, key=lambda a: a[1])

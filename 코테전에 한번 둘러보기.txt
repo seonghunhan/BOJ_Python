@@ -1,3 +1,10 @@
+써야하는 라이브러리!!
+from itertools import combinations
+from itertools import permutations
+from collections import Counter
+from functools import reduce
+
+
 1. str 문제관련
 1.2) 리스트에 있는 str 한줄씩 출력
 print('\n'.join(리스트이름))
@@ -54,16 +61,44 @@ temp = list(permutations(arr,3))
 (0-1)%4 -> 3이다!!   (0+1)%4 가 1이고!
 
 
-5. sort
+5. 정렬!!
 https://gorokke.tistory.com/38 여기참고하기(숫자,문자,오름차순,내림차순 정리되어있슴)
 weightList.sort(reverse=True) -> 역순
 time = sorted(time, key=lambda a: a[0]) -> 그리디 1931 최대회의실배정
 time = sorted(time, key=lambda a: a[1])
 
+5.1 정렬2!!
+시뮬 17140 참고
+from collections import Counter (C대문자 주의)
+temp = [(1, 3), (2, 2), (3, 1)]
+X = Counter(temp)
+print(X) -> Counter({1: 3, 2: 2, 3: 1}) !!!!근데 애초에 위에서 X = Counter(temp).most_common()하면 밑에 생략가능 from collections import Counter
+X = list(X.items())  (이거를 다시 리스트화) 
+print(X) -> [(2,2),(1,3),(3,1)]
+X = sorted(X, key=lambda x: (x[1], x[0])) -> 인덱스1, 인덱스0 오름차순 정렬 (시뮬 17140 문제 참고)
+print(X) -> [(3,1),(2,2),(1,3)] 
+temp = reduce(lambda x,y : list(x) + list(y), X[1:], list(X[0])) -> 위의 튜플형태를 리스트로 만들기(이건 그냥 외우기..) from functools import reduce
+print(temp) -> [3, 1, 2, 2, 1, 3]
+
+5.2 정렬문제시 사용 내장함수
+1) del temp[0] -> 리스트에 0번째 인덱스 제거
+2) board = list(map(list, zip(*board))) -> 전치행렬 만드는것 (열들을 행처럼 리스트로 가지고 놀고 싶을때 사용)(17140문제 참고)
+3) board = board[:50] -> 0~49인덱스까지만 슬라이싱 하는것 
+4) temp.extend([1,2,3]) -> 기존 리스트에 1,2,3추가
+
+
+
 6. bfs 2206 벽부수기 한번 보기
 
+
+
 7. 코테 제출언어에 pypy3있으면 이걸로 제출하기!!!!!!!!!!
+
+
 
 8. import math
 올림 math.ceil(값) -> ceil천장이니까 올림이래
 내림 math.floor(값) -> floor 마루,바닥이니까 내림이래
+
+
+9. 시뮬같은거 할때 하드코드 금지! ex ) 시뮬_17140에서 if로 시작할때 답도출될경우 0프린트하는거! 꼭 보기! -> try로 바꿈

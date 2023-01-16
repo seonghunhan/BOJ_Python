@@ -3,6 +3,7 @@ from itertools import combinations
 from itertools import permutations
 from collections import Counter
 from functools import reduce
+import heapq
 
 
 1. str 문제관련
@@ -60,9 +61,17 @@ temp = list(permutations(arr,3))
 4. 연산
 (0-1)%4 -> 3이다!!   (0+1)%4 가 1이고!
 
+5.-1 우선순위큐
+start, finish = map(int, input().split())
+asd = []
+heapq.heappush(asd, (finish, start)) -> 우선순위1 : finish 그리고 우선순위2 : start
+-> sorted(asd, key=lambda x : (x[1], x[0]))이랑 같지만 자료구조가 달라서 힙큐가 시간제한에 훨신 관용적임!!!!11000회의실배정참고
+logn! 속도임 바킹독꺼 보고 블로그에 정리해놓기!
 
-5. 정렬!!
+5. 정렬!! ㄴㄴㄴㄴ 정렬은 솔트고 나발이고 힙큐(우선순위큐)로 가기!!!
 https://gorokke.tistory.com/38 여기참고하기(숫자,문자,오름차순,내림차순 정리되어있슴)
+힙큐
+https://velog.io/@dding_ji/baekjoon11000 (파이썬으로 우선순위 큐 자료구조에 오름차순 넣기)
 weightList.sort(reverse=True) -> 역순
 time = sorted(time, key=lambda a: a[0]) -> 그리디 1931 최대회의실배정
 time = sorted(time, key=lambda a: a[1])

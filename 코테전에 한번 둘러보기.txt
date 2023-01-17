@@ -79,9 +79,10 @@ time = sorted(time, key=lambda a: a[1])
 5.1 정렬2!!
 시뮬 17140 참고
 from collections import Counter (C대문자 주의)
-temp = [(1, 3), (2, 2), (3, 1)]
+temp = [1, 1, 1, 2, 2, 3]
 X = Counter(temp)
-print(X) -> Counter({1: 3, 2: 2, 3: 1}) !!!!근데 애초에 위에서 X = Counter(temp).most_common()하면 밑에 생략가능 from collections import Counter
+print(X) -> Counter({1: 3, 2: 2, 3: 1})  이거 dict[key]처럼 X[3] -> 1이다!!
+!!!!근데 애초에 위에서 X = Counter(temp).most_common()하면 밑에 생략가능 from collections import Counter
 X = list(X.items())  (이거를 다시 리스트화) 
 print(X) -> [(2,2),(1,3),(3,1)]
 X = sorted(X, key=lambda x: (x[1], x[0])) -> 인덱스1, 인덱스0 오름차순 정렬 (시뮬 17140 문제 참고)
@@ -94,6 +95,9 @@ print(temp) -> [3, 1, 2, 2, 1, 3]
 2) board = list(map(list, zip(*board))) -> 전치행렬 만드는것 (열들을 행처럼 리스트로 가지고 놀고 싶을때 사용)(17140문제 참고)
 3) board = board[:50] -> 0~49인덱스까지만 슬라이싱 하는것 
 4) temp.extend([1,2,3]) -> 기존 리스트에 1,2,3추가
+5) list1.remove(3) -> 리스트에 특정 값 제거 
+list1 = [ 4, 3, 2, 1]
+list1.remove(3) -> [4, 2, 1]
 
 
 
@@ -111,3 +115,20 @@ print(temp) -> [3, 1, 2, 2, 1, 3]
 
 
 9. 시뮬같은거 할때 하드코드 금지! ex ) 시뮬_17140에서 if로 시작할때 답도출될경우 0프린트하는거! 꼭 보기! -> try로 바꿈
+
+
+10. 중복제거! -> set
+A = [1, 1, 2, 3]
+A = list(set(A)) -> [1,2,3]
+
+11 딕셔너리
+    for _ in range(n):
+        v, k = input().split()
+        # 의류 종류가 dict에 없다면 새로 넣어주고, 아니면 원래 있던 의류 종류 키에 대해,
+        # set 밸류에 v 추가해주기
+        if clothes.get(k) == None:
+            clothes[k] = set()  ★★★★★
+        clothes[k].add(v)
+그리고 len(clothes['성훈이의템']) -> 2
+그리고 for key in clothes.keys() :
+	cnt += len(clothes[key]) 이런것도 가능

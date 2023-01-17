@@ -16,7 +16,9 @@ def solve(arr) :
     for i in range(len(arr)) :
         #print(arr[i])
         A = [ j for j in arr[i] if j != 0]
+        print(A)
         A = Counter(A).most_common()
+        print(A)
         A = sorted(A, key = lambda x : (x[1], x[0]))
         #print(A)    
         

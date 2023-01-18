@@ -2,6 +2,9 @@ import sys
 import copy
 input = sys.stdin.readline
 
+# https://ssafy-story.tistory.com/58 여기 참고!
+# 이거 연속인날 temp, temp1 초기화하는거 없어서 틀린 코드인거 같음
+
 holdings = int(input())
 stock = list(map(int, input().split()))
 stock2 = copy.deepcopy(stock)

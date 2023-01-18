@@ -132,3 +132,6 @@ A = list(set(A)) -> [1,2,3]
 그리고 len(clothes['성훈이의템']) -> 2
 그리고 for key in clothes.keys() :
 	cnt += len(clothes[key]) 이런것도 가능
+
+
+12. sys.exit() -> 이거 무조건 끝내는거인듯

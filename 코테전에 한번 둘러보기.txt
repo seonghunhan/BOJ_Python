@@ -23,6 +23,7 @@ board = [list(input().split()) for _ in range(N)]
 3) asd -> ['a', 's', 'd']
 asd = list(input().rstrip())
 
+mineBoard = [list(input().rstrip()) for _ in range(N) ] -> 문자열 2차원배열
 
 4) 문자열 두개를 비교하는거면 리스트에 넣지말고 그냥 str(input())으로 저장해서 다루기
 

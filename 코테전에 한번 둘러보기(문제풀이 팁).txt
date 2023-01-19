@@ -14,3 +14,16 @@ for i in range(1, N+1):
     print(switchList[i], end = " ")
     if i % 20 == 0 :
         print()
+
+4. NXN의 리스트가 아닌 불규칙한 리스트에서 좌표 찾을때
+https://tmdrl5779.tistory.com/133 문제 참고
+
+keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+mo = 'yuiophjklbnm'
+
+xl, yl, xr, yr = None, None, None, None
+
+for i in range(len(keyboard)):
+    if left in keyboard[i]:
+        xl = i
+        yl = keyboard[i].index(left) <= 이거씀 index('찾고자하는요소')

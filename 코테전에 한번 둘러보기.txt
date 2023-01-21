@@ -92,7 +92,7 @@ temp = reduce(lambda x,y : list(x) + list(y), X[1:], list(X[0])) -> 위의 튜�
 print(temp) -> [3, 1, 2, 2, 1, 3]
 
 5.2 정렬문제시 사용 내장함수
-1) del temp[0] -> 리스트에 0번째 인덱스 제거
+1) del temp[0] -> 리스트에 0번째 인덱스 제거 -> pop은 인덱스를 반환하지만 del은 반환X 고로 del이 미세하게 빠름 또한 슬라이싱도 가능
 2) board = list(map(list, zip(*board))) -> 전치행렬 만드는것 (열들을 행처럼 리스트로 가지고 놀고 싶을때 사용)(17140문제 참고)
 3) board = board[:50] -> 0~49인덱스까지만 슬라이싱 하는것 
 4) temp.extend([1,2,3]) -> 기존 리스트에 1,2,3추가
@@ -107,7 +107,7 @@ list1.remove(3) -> [4, 2, 1]
 
 
 7. 코테 제출언어에 pypy3있으면 이걸로 제출하기!!!!!!!!!!
-
+ㄴ
 
 
 8. import math
@@ -136,3 +136,5 @@ A = list(set(A)) -> [1,2,3]
 
 
 12. sys.exit() -> 이거 무조건 끝내는거인듯
+
+13. if not all(visited) : -> visited안에 모두 False일경우 True라 생각하고 실행함 (반복가능형 자료에서 모두 ~~일경우(not 안붙이면 True) True반한

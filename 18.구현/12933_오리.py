@@ -19,15 +19,15 @@ def solve(start) :
         #print(i)
         if queck[x] == quackAlllist[i] and visited[i] == False :
             visited[i] = True
-            #print('x :'+str(x) +'  i :'+str(i))
+            print('x :'+str(x) +'  i :'+str(i))
             if queck[x] == 'k' :
                 x = 0                
                 if first :
                     first = False
                     result += 1
-                continue
+                continue #아래코드 실행 X -> 더해버리면 x는 0이아니라 1로 새출발하여 q를 감지못함
             x += 1
-        
+
     
 
 for i in range(0, length) :

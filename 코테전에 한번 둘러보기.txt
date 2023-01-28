@@ -1,5 +1,5 @@
 !!!너는 문제이해도가 낮아 그니까 문제에서 원하는 결과를 명확하게 해석하고 여러 경우의수를 고려할 것!!!!
-
+1억 -> 1초
 써야하는 라이브러리!!
 from itertools import combinations
 from itertools import permutations

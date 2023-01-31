@@ -16,7 +16,8 @@ for _ in range(M) :
     
     dic[a].add(b)  # 위에서 value를 set로 정의한덕에 중복없이 추가
     dic[b].add(a)
-    
+
+print(dic)
 def bfs(start, dic) :
     que = deque()
     que.append(start)

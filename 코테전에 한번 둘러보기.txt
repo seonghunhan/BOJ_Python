@@ -16,12 +16,13 @@ import heapq
 1. str 문제관련
 1.2) 리스트에 있는 str 한줄씩 출력
 print('\n'.join(리스트이름))
-
+print('\n'.join(map(str, 리스트이름)))
 
 1.2) 리스트에 있는 str 붙여서 출력 ['a', 'b', 'c', 'd'] -> abcd로 출력
 temp = ['a', 'b', 'c', 'd']
 print(''.join(map(str, temp)))
 
+-----------------------------
 
 2) a s d -> ['a', 's', 'd']
 board = [list(input().split()) for _ in range(N)]

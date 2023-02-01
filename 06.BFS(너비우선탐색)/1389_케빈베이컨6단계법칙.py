@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 N, M = map(int, input().split())
 dic = {}
-
+result = []
 for i in range(1,N+1) :
     dic[i] = set()    
 
@@ -33,7 +33,7 @@ def bfs(start, target) :
                 que.append(i)
                 dist[i] = dist[x] + 1
                 
-result = []
+
 for i in range(1, N+1) :
     temp = 0
     for j in range(1, N+1) :

@@ -165,6 +165,17 @@ list1.remove(3) -> [4, 2, 1]
 8. import math
 올림 math.ceil(값) -> ceil천장이니까 올림이래
 내림 math.floor(값) -> floor 마루,바닥이니까 내림이래
+최대공약수 math.gcd -> greatest common devide?? 암튼
+최소공배수 math.lcm -> least common multifly?? 근데 lcm은 파썬3.9이상버전만 가능함 되는지 보고 안되면 직접구현!
+i = 0
+lcm = 0
+while True :
+    i += 1
+    if (M * i) % N == 0 :
+        lcm = i * M
+        break
+print(lcm)
+
 
 
 9. 시뮬같은거 할때 하드코드 금지! ex ) 시뮬_17140에서 if로 시작할때 답도출될경우 0프린트하는거! 꼭 보기! -> try로 바꿈

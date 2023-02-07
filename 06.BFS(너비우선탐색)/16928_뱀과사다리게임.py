@@ -25,7 +25,7 @@ def bfs() :
         for i in range(1,7) :
             nx = x + i
             
-            if 0 < nx < 101 :
+            if 0 < nx < 101 : ## 아래에 visited체크를 여기서 not visited[nx][0]으로 하고 35줄은 else로해서 7번 틀림 그러나 결과는 계속 같음 그니까 실코테에서 답통과해도 제발!!!!!코드 로직을 꼼꼼히 살펴보기!
                 if visited[nx][1] != 0 and not visited[visited[nx][2]][0] :
                     visited[nx][0] = True
                     visited[visited[nx][2]][0] = True

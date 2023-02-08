@@ -85,6 +85,12 @@ safezone.append((i,j))
 리스트에서 조합을 구하기 위하여 리스트안에 튜플형식으로 삽입
 addWallList = list(combinations(safezone, 3))
 
+기본공식은 짚고 넘어가기!
+import math
+n, m = map(int,input().split())
+nCm -> x = math.factorial(n) // (math.factorial(n - m) * math.factorial(m))    ( nPm 은 분모의 m팩 없애고 그대로)
+print(int(x))
+
 
 3.2 순열(순서 상관O)
 from itertools import permutations

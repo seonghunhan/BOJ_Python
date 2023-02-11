@@ -1,48 +1,42 @@
-import sys
-input = sys.stdin.readline
-con, col = map(str, input().split())
-outputList = list(input().rstrip())
-consonantList = [['q','w','e','r','t'],['a','s','d','f','g'],['z','x','c','v','ㅗ']]
-consonantList2 = ['q','w','e','r','t','a','s','d','f','g','z','x','c','v','ㅗ']
-collectionList = [['ㅗ','y','u','i','o','p'],['ㅗ','h','j','k','l','ㅗ'],['b','n','m','ㅗ','ㅗ','ㅗ']]
-collectionList2 = ['ㅗ','y','u','i','o','p','ㅗ','h','j','k','l','ㅗ','b','n','m','ㅗ','ㅗ','ㅗ']
+left, right = input().split()
+strings = list(input())
 
-for i in range(3) :
-    for j in range(5) :
-        if con == consonantList[i][j] :
-            conX, conY = i, j
+keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+mo = 'yuiophjklbnm'
 
-for i in range(3) :
-    for j in range(6) :
-        if col == collectionList[i][j] :
-            colX, colY = i, j
+xl, yl, xr, yr = None, None, None, None
 
-# print(conX, conY, colX, colY)
-result = 0
-while outputList :
-    char = outputList.pop(0)
-   # print(char)
-    
-    if char in consonantList2 :
-        for i in range(3) :
-            for j in range(5) :
-                if char == consonantList[i][j] :
-                    nextConX, nextConY = i, j
-        result += abs(conX - nextConX) + abs(conY - nextConY)
-        result += 1
-        conX, conY = nextConX, nextConY
-    
-    if char in collectionList2 :
-        for i in range(3) :
-            for j in range(6) :
-                if col == collectionList[i][j] :
-                    nextColX, nextColY = i, j
-        result += abs(colX - nextColX) + abs(colY - nextColY)
-        result += 1
-        colX, colY = nextColX, nextColY 
-        
-print(result)
+for i in range(len(keyboard)):
+    if left in keyboard[i]:
+        xl = i
+        yl = keyboard[i].index(left)
 
-# keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] 
+    if right in keyboard[i]:
+        xr = i
+        yr = keyboard[i].index(right)
 
-# print(keyboard[1].index('h'))
+time = 0
+for string in strings:
+    time += 1
+    if string in mo:
+        for i in range(len(keyboard)):
+            if string in keyboard[i]:
+                nx = i
+                ny = keyboard[i].index(string)
+
+                time += abs(nx - xr) + abs(ny - yr)
+                xr = nx
+                yr = ny
+                break
+    else:
+        for i in range(len(keyboard)):
+            if string in keyboard[i]:
+                nx = i
+                ny = keyboard[i].index(string)
+
+                time += abs(nx - xl) + abs(ny - yl)
+                xl = nx
+                yl = ny
+                break
+
+print(time)

@@ -5,6 +5,7 @@ target = int(input())
 N = int(input())
 brokenNum = list(map(int, input().split()))
 
+#현 채널 100번이니까 +,-로 최대 노가다질해서 다가갈수 있는 값
 minNum = abs(target - 100)
 
 for i in range(1000001) : #50만이 가려는채널이지만 최소 100만까지는 가기위한 루트에 낄 수 있음

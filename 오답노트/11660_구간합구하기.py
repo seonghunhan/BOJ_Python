@@ -1,3 +1,4 @@
+# prefix sum 구간합 알고리즘
 # 누적합 문제!
 
 import sys

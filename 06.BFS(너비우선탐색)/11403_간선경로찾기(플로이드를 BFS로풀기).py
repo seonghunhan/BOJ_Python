@@ -19,11 +19,10 @@ def bfs(x) :
             
             if board[nx][i] and not visited[i] :
                 visited[i] = 1
-                result[x][i] = 1
+                result[x][i] = 1 # 이코드가 키포인트
                 que.append(i)    
         
         
-    
 
 for i in range(N) :
     bfs(i)

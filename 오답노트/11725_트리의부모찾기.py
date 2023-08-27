@@ -15,6 +15,7 @@ for _ in range(N-1) :
 
 result = [0 for _ in range(N+1)]
 
+print(dic)
 def bfs(start, dic) :
     
     que = deque()

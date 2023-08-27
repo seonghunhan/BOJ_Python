@@ -1,22 +1,24 @@
 import sys
 input = sys.stdin.readline
-char = input().rstrip()
-target = input().rstrip()
 
+arr = list(input().rstrip())
+target = list(input().rstrip())
 
-lastOfTarget = target[-1]
 length = len(target)
-#print(length)
+lastOftarget = target[-1]
 stack = []
 
-for i in char :
-    stack.append(i)
+stack[:]
+for char in arr :
+    stack.append(char)
     
-    if i == lastOfTarget and ''.join(stack[-length : ]) == target :
-        #print(stack)
+    if char == lastOftarget and stack[-length:] == target :
         del stack[-length:]
 
-if len(stack) :    
-    print(''.join(stack))
-else :
+if len(stack) == 0 :
     print('FRULA')
+else :
+    print(''.join(stack))
+
+    
+    

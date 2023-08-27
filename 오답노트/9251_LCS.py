@@ -12,6 +12,7 @@ firstString = input().rstrip()
 secondString = input().rstrip()
 
 board = [ list(0 for _ in range(len(firstString)+1)) for _ in range(len(secondString)+1)]
+print(board)
 
 for i in range(1, len(secondString)+1) :
     

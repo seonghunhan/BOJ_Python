@@ -22,7 +22,8 @@ for i in range(1, N+1) :
             board[i][j] = board[i-1][j]
         
         else :
-             maxValue = max(value + board[i-1][j-weight] , board[i-1][j])
+             maxValue = max(value + board[i-1][j-weight] , board[i-1][j]) # j-weight가 킬포
              board[i][j] = maxValue
-             
+
+#print(board)
 print(board[-1][-1])

@@ -32,7 +32,7 @@ if not isTrue :
 
 # N, M = map(int, input().split())
 
-# board = [ 0 for _ in range(M+1)]
+# board = [ 0 for _ in range(M+1)]                                         
 # visited = [False for _ in range(M+1)]
 
 # def bfs(start) :

@@ -16,7 +16,6 @@ for i in range(T) :
     flag = 0
     for j in operator :
         
-        
         if j == 'R' :
             rev += 1
         elif j == 'D' :
@@ -33,11 +32,15 @@ for i in range(T) :
     if rev%2 == 1 :
         arr.reverse()
     
+    print(arr)
     if flag == 0 :
         #print("Asd")
         print('['+','.join(arr)+']')
     #print(arr)
     
 
-        
+# temp = [1,2,3,4]
+# print(','.join(map(str, temp)))
+
+
     

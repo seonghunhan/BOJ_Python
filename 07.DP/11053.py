@@ -13,6 +13,7 @@ for i in range (N) :
             dp[i] = dp[j]
 
     dp[i] += 1
+print(dp)
 
 print(max(dp))
 

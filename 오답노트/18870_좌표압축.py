@@ -19,6 +19,3 @@ for i in arr :
     
 # for i in arr : # 여기서 100만^2 고로 10^12니까 문제에서 2초인 10^8 X 2보다 초과!
 #     print(arr2.index(i), end = ' ')
-
-
-    

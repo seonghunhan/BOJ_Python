@@ -12,8 +12,11 @@ for _ in range(N-1) :
     
     dic[a].add(b)
     dic[b].add(a)
+    
 
 result = [0 for _ in range(N+1)]
+
+print(dic)
 
 def bfs(start, dic) :
     
@@ -29,8 +32,10 @@ def bfs(start, dic) :
             if not result[i] :
                 que.append(i)
                 result[i] = x
+                
 
 bfs(1,dic)
-
+print(result)
 for i in range(2,N+1) :
     print(result[i])
+

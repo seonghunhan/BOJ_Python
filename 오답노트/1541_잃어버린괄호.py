@@ -2,20 +2,28 @@ import sys
 input = sys.stdin.readline
 
 expression = input().rstrip().split('-')
-num = []
-for i in expression:
+
+#print(expression)
+sum = 0
+temp2 = []
+for i in expression :
     
     temp = i.split('+')
-    cnt = 0
+    sum2 = 0
     for j in temp :
-        cnt += int(j)
+        sum += int(j)
+        sum2 += int(j)
     
-    num.append(cnt)
-    
-result = num[0]
+    temp2.append(sum2)
 
-if len(num) > 1 :
-    for i in range(1, len(num)) :
-        result -= num[i]
-        
+#print(temp2)
+result = temp2[0]
+
+if len(temp2) > 1 :
+    
+    for i in range(1, len(temp2)) :
+        result -= temp2[i]
+
 print(result)
+
+        

@@ -1,7 +1,7 @@
 !!!너는 문제이해도가 낮아 그니까 문제에서 원하는 결과를 명확하게 해석하고 여러 경우의수를 고려할 것!!!!
 1억 -> 1초
 https://chancoding.tistory.com/43 -> 파이썬 자료구조의 메서드별 시간복잡도
-중간에 찾는거는 해쉬가 사기급 d.fet(k) -> O(1)
+중간에 찾는거는 해쉬가 사기급 d.get(k) -> O(1)
 길이 출력은 리스트, 해쉬, 셋 다 O(1)이더라 len
 이래저래 해쉬는 거의 O(1)을 보임
 리스트의 sort는 N Log N임 -> 이분탐색 logN에서 N배된거 즉, O(N)보다는 느린데 쓸만함
@@ -9,15 +9,53 @@ https://chancoding.tistory.com/43 -> 파이썬 자료구조의 메서드별 시�
 삽입(얘는 근데 리스트도 O(1)임 append) 암튼
 삽입 : Set -> s.add(..),  Dic -> d[k] = v
 특정 요소 제거 : Set -> s.discard(...) 이거는 없을경우 에러발생X  Dic -> del d[k]
-특정 요소 포함 여부 :  Set -> x in/not in s     Dic -> d.get(k)
+특정 요소 포함 여부 :  Set -> x in/not in s     
+Dic -> d.get(k) -> if clothes.get(k) == None: clothes[k] = set() 일케
+혹은 키안에 value를 찾는거라면 if m not in clothes[k] : clothes[k].add(m)
+★해쉬 안에 오름, 내림 정렬(국민은행)
+dic = {'a' : 250, 'b' : 125, 'c' : 10, 'd' : 150, 'e' : 30, 'f' : 30}
+sorted_dict = sorted(dic.items(), key= lambda x:x[1], reverse=True)
+-> [('a', 250), ('d', 150), ('b', 125), ('e', 30), ('f', 30), ('c', 10)]
+
+★해시맵에서 items()
+dic = {'a' : 250, 'b' : 125, 'c' : 10, 'd' : 150, 'e' : 30, 'f' : 30}
+
+for k,v in dic.items() :
+    print(k,v)
+-> 특정 value를 가진 key값 찾을때 유용 혹은 dic분해할때 유용 아래 Counter처럼
+
+
+★ 해시 hash함수 사용해서 해시암호화된걸 키값으로 사용하는방법
+-> 프로그래머스 완주하지 못한 선수
+
+★ Couter (from collections import Counter)
+-> 리스트를 딕셔너리로 바꿔줌
+-> 해당 key값이 몇번 나왔는지 dic으로 만들어줌
+
+temp = [1, 1, 1, 2, 2, 3]
+X = Counter(temp)
+print(X) -> Counter({1: 3, 2: 2, 3: 1})  이거 dict[key]처럼 X[3] -> 1이다!!
+!!!!근데 애초에 위에서 X = Counter(temp).most_common()하면 밑에 생략가능 from collections import Counter
+X = list(X.items())  (이거를 다시 리스트화) 
+print(X) -> [(2,2),(1,3),(3,1)]
+
+프로그래머스 !!! 팁
+nonlocal 변수명 -> nonlocal 문은 전역변수을 제외한 바로 위의 함수에서 사용되는 변수와 바인딩되어 참조하도록 합니다.
+dfs, bfs쓸때 요긴함 -> 근데 그냥 solution위에 전역변수 선언하고 함수에서 global로 선언하는게 편함
+
+-> BFS 쌍방향노드탐색
+for i in dic[x]
 
 써야하는 라이브러리!!
 from itertools import combinations
+from itertools import combinations_with_replacement
 from itertools import permutations
+from itertools import product
 from collections import Counter
 from functools import reduce
 import heapq
 from math import factorial
+from bisect import bisect_left -> 이분탐색 -> num = bisect_left(리스트, 특정값)하면 몇번째인지 num으로 반환
 
 
 1. str 문제관련
@@ -25,15 +63,31 @@ from math import factorial
 print('\n'.join(리스트이름))
 print('\n'.join(map(str, 리스트이름)))
 
+★
 1.2) 리스트에 있는 str 붙여서 출력 ['a', 'b', 'c', 'd'] -> abcd로 출력
 temp = ['a', 'b', 'c', 'd']
 print(''.join(map(str, temp)))
+- map() 함수는 튜플 temp의 모든 원소에 str 함수를 적용하여 그 원소들을 문자열로 변환합니다
+- 위에는 (1,2,3) -> 123으로도 만들어줌(int -> str)
+
+- ''.join(리스트)
+''.join(리스트)를 이용하면 매개변수로 들어온 ['a', 'b', 'c'] 이런 식의 리스트를 'abc'의 문자열로 합쳐서 
+반환해주는 함수인 것입니다.
+
+- '구분자'.join(리스트)
+'구분자'.join(리스트)를 이용하면 리스트의 값과 값 사이에 '구분자'에 들어온 구분자를 넣어서 하나의 문자열로 합쳐줍니다.
+'_'.join(['a', 'b', 'c']) 라 하면 "a_b_c" 와 같은 형태로 문자열을 만들어서 반환해 줍니다.
 
 1.3) 한개씩 뽑아야하는거 한줄로 출력
 for i in arr :
     print(arr2.index(i), end = ' ')       a b c d로 출력
 
 -----------------------------
+Str 다루기
+1) 마지막문자 제거
+a = 'asd'
+a = a[:-1] -> 'as'
+
 
 2) a s d -> ['a', 's', 'd']
 board = [list(input().split()) for _ in range(N)]
@@ -85,6 +139,7 @@ safezone.append((i,j))
 리스트에서 조합을 구하기 위하여 리스트안에 튜플형식으로 삽입
 addWallList = list(combinations(safezone, 3))
 
+
 기본공식은 짚고 넘어가기!
 import math
 n, m = map(int,input().split())
@@ -97,6 +152,14 @@ from itertools import permutations
 arr = [1,3,4,2,5]
 temp = list(permutations(arr,3))
 
+3.3 중복순열(순서 상관있고 중복도 괜찮) -> 프로그래머스 이모티콘 할인 행사 ㄱㄱㄱㄱ
+ RateList = [40, 30, 20, 10]
+    
+    temp = list(product(RateList,repeat=len(emoticons)))   len(emoticons)는 7임
+
+https://geonlee.tistory.com/69 참고!
+
+3.4 중복조합(순서 상관없고 중복 괜찮) -> 프로그래머스 양궁대회
 
 4. 연산
 (0-1)%4 -> 3이다!!   (0+1)%4 가 1이고!
@@ -110,7 +173,7 @@ asd = []
 heapq.heappush(asd, (finish, start)) -> 우선순위1 : finish 그리고 우선순위2 : start
 -> sorted(asd, key=lambda x : (x[1], x[0]))이랑 같지만 자료구조가 달라서 힙큐가 시간제한에 훨신 관용적임!!!!11000회의실배정참고
 logn! 속도임 바킹독꺼 보고 블로그에 정리해놓기!
-기본 오름차순
+우선순위큐 1차원배열 넣어지는 순서★★★
 heapq.heappush(hq,3)
 heapq.heappush(hq,1)
 heapq.heappush(hq,5)
@@ -120,6 +183,22 @@ print(heapq.heappop(hq)) -> 3!!
 !! 근데 파이썬은 최소힙밖에 지원안함 그래서 최대힙까지 조질라면 -1곱하고 힙파이시키고 다시 힙팝그짓거리해야하는데
 N이 10만에서 제한시간6초(80억)인데도 시간초과뜸 그래서 visited처럼 꼼수로 조져야함
 -> 7662우선순위큐에 별짓거리 다했으니까 꼭보셈!!!!
+
+우선순위큐 2차원배열 넣어지는 순서★★★
+x = [[10,4], [41,3], [24,5], [25,6]]
+q = []
+heapq.heappush(hq, [10,4])
+heapq.heappush(hq, [41,3])
+heapq.heappush(hq, [24,5])
+heapq.heappush(hq, [25,6])
+이러면 프린트한거랑 pop에서 나오는순서랑 실제로 다름!!!★★★ (print로 디버깅하면서 실수하지마셈)
+print(hq) -> [[10, 4], [25, 6], [24, 5], [41, 3]] 이렇게 나옴 하지만!
+print(heapq.heappop(q)) -> [10, 4]
+print(heapq.heappop(q)) -> [24, 5]
+print(heapq.heappop(q)) -> [25, 6]
+print(heapq.heappop(q)) -> [41, 3]  -> 2차원배열에서 인덱스 앞부분이 더 적은순서로(오름차순)으로 출력!
+
+
 
 heapq.heappush(arr, (abs(num), num) ) -> 이러면 1차적으로 절대값이 작은거, 그다음 num이 작은거 순으로 최소힙저장!
 -> 11286 절대값힙 (안보고 성공!)
@@ -134,6 +213,8 @@ https://velog.io/@dding_ji/baekjoon11000 (파이썬으로 우선순위 큐 자�
 weightList.sort(reverse=True) -> 역순
 time = sorted(time, key=lambda a: a[0]) -> 그리디 1931 최대회의실배정
 time = sorted(time, key=lambda a: a[1])
+
+combi = ''.join(sorted(combi)) -> 조합에서 나온 문자열 오름차순 정렬해서 재정의(프로그래머스_메뉴리뉴얼)
 
 5.1 정렬2!!
 시뮬 17140 참고
@@ -157,7 +238,8 @@ print(temp) -> [3, 1, 2, 2, 1, 3]
 5) list1.remove(3) -> 리스트에 특정 값 제거 
 list1 = [ 4, 3, 2, 1]
 list1.remove(3) -> [4, 2, 1]
-6) sort(reverse=True)->(오름차순 정렬후 reverse)랑 reverse()->(그냥 리버스)는 완전다름! 주의하기
+6) arr.sort(reverse=True)->(오름차순 정렬후 reverse)랑 reverse()->(그냥 리버스)는 완전다름! 주의하기
+그리고 arr = arr[::-1] 이것도 역순으로 뒤집는거임
 7) arr.index(요소) -> 요소에 맞는 인덱스출력함 O(N)이고, 정렬)18870에서 사용
 8) arr.replace('a','b') -> 배열의 a를 b로 바꿈
 
@@ -185,6 +267,8 @@ while True :
         break
 print(lcm)
 
+8.1 배수판정법
+3의 배수 : 각 자리수의 합이 3의 배수
 
 
 9. 시뮬같은거 할때 하드코드 금지! ex ) 시뮬_17140에서 if로 시작할때 답도출될경우 0프린트하는거! 꼭 보기! -> try로 바꿈
@@ -228,6 +312,16 @@ file = sorted(file.items(), key = lambda x:x[0], reverse=False) # 확장자 사�
 for i in file:
     print(i[0], i[1]) # 파일명, 개수 출력
 
+11.3) 딕셔너리에서 value가 최대인값들 출력
+
+dic = { a:3, b:3, c:1 }
+temp = []
+max_value = max(dic.values())
+for k, v in dic.items() :
+     if v == max_value :
+        temp.append(k)
+
+temp -> [a,b]
 
 
 12. sys.exit() -> 이거 무조건 끝내는거인듯
@@ -235,10 +329,28 @@ for i in file:
 13. if not all(visited) : -> visited안에 모두 False일경우 True라 생각하고 실행함 (반복가능형 자료에서 모두 ~~일경우(not 안붙이면 True) True반한
 
 
+14. for line in commands :
+         command, *tokens = line.split() 
+이럴경우 line안에 첫단어는 command로가고 나머지는 리스트로!!!해서 tokens로 간다! (프로그래머스 표병합(카카오))
 
 
+15. 이분탐색
+이진 탐색은 탐색 횟수별로 확인하는 데이터의 개수가 절반씩 줄어들기 
+때문에 시간 복잡도가 O(log N) 입니다. 이처럼 확인하는 데이터의 개수가 
+절반씩 줄어드는 특징은 퀵 정렬과 동일합니다.
+
+arr에서 어떤숫자보다 높은숫자들을 아래 형태로 구할 수 있음
+문제에서 해당 스코어보다 같거나 높은 스코어를 갖는 갯수 구할때 사용
+(이거 사용하려면 우선 arr을 sort시켜야함)    
+
+score = 150
+arr = [1,2,3,4,150,150,160,200,300,400,500,600]
+num = bisect_left(arr, score)
+print(num) #-> 4
+이제 len(arr) - num 으로 같거나 높은점수 갯수 구할 수 있음
 
 
-
- 
+N과M 시리즈 문제(1~10~~)
+-> DFS이자 백트래킹문제, 순열, 조합 문제
+-> 순열은 1,2,3이
 

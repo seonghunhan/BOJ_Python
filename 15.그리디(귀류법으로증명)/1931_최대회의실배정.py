@@ -14,6 +14,7 @@ for _ in range(N):
 #print("끝나는 시간까지 sorting 하고 time : " + str(time))
 time = sorted(time, key=lambda x: (x[1], x[0]))
 
+print(time)
 last = 0 # 회의의 마지막 시간을 저장할 변수
 conut = 0 # 회의 개수를 저장할 변수
 

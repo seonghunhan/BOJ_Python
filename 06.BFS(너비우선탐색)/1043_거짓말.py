@@ -11,6 +11,7 @@ for _ in range(M) :
     temp = list(map(int, input().split()))
     partyList.append(temp[1:temp[0]+1])
 
+
 dic = {}
 
 for i in range(1, N+1) :
